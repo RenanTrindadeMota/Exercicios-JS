@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Adivinhação</title>
+    <link rel="stylesheet" href="adivinho-style.css">
+
+    <script>
+            function verificarPalpite() {
+        // Obtém o palpite do usuário
+        var palpiteUsuario = parseInt(document.getElementById("palpite").value);
+
+        // Gera um número aleatório entre 1 e 10
+        var numeroAleatorio = Math.floor(Math.random() * 10) + 1;
+
+        // Verifica se o palpite está correto
+        if (palpiteUsuario === numeroAleatorio) {
+            document.getElementById("resultado").innerHTML = "Parabéns, você acertou! O número era " + numeroAleatorio;
+        } else if (palpiteUsuario>10) {
+            document.getElementById("resultado").innerHTML ="Você não sabe ler?!";
+        } else {
+            document.getElementById("resultado").innerHTML = "Tente novamente! O número era " + numeroAleatorio;
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <main id="container">
+        <div id="quadro">
+            <h2>
+               Jogo de Adivinhação
+            </h2>
+
+            <div id="input_box">
+                <div class="input-field">
+                    <label for="value">Insira um número de 1 a 10: </label>
+                    <input type="number" id="palpite">
+                </div>
+            </div>
+
+            <button id="verif" onclick="verificarPalpite()">
+                Verificar
+            </button>
+
+            <div id="resultado"></div>
+        </div>
+
+</body>
+</html>

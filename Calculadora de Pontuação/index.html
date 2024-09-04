@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function classificacao() {
+
+            var pontuacao = parseInt(document.getElementById("pontos").value);
+            var nivel;
+
+            switch (true) {
+                case (pontuacao >= 0 && pontuacao <= 199):
+                    nivel = "Iniciante";
+                    break;
+                case (pontuacao >= 200 && pontuacao <= 499):
+                    nivel = "Intermediário";
+                    break;
+                case (pontuacao >= 500 && pontuacao <= 999):
+                    nivel = "Avançado";
+                    break;
+                case (pontuacao >= 1000):
+                    nivel = "Mestre";
+                    break;
+                default:
+                    nivel= "Número inválido";
+                    break;
+            }
+
+            document.getElementById("resultado").innerHTML = "Seu nível de jogo é "+nivel;
+        }
+    </script>
+</head>
+<body>
+    <main id="container">
+        <div id="quadro">
+            <h2>
+               Classificação de Pontuação
+            </h2>
+
+            <div id="input_box">
+                <div class="input-field">
+                    <label for="value">Insira sua pontuação: </label>
+                    <input type="number" id="pontos">
+                </div>
+            </div>
+
+            <button onclick="classificacao()">
+                Verificar
+            </button>
+
+            <div id="resultado"></div>
+        </div>
+
+</body>
+</html>

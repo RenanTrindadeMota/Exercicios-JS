@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="gorjeta-style.css">
+    <title>Cálculo de Gorjeta</title>
+
+    <script>
+        function verifGorjeta() {
+            var vtotal = parseFloat(document.getElementById("total").value);
+            var satisfacao = document.querySelector("#lang").value;
+            var gorjeta;
+
+            if (satisfacao === "bom") {
+                gorjeta = vtotal * 0.10;
+            } else if (satisfacao === "otimo") {
+                gorjeta = vtotal * 0.15;
+            } else if (satisfacao === "excelente") {
+                gorjeta = vtotal * 0.20;
+            } else {
+                gorjeta = 0;
+            }
+
+            var valorTotal = vtotal + gorjeta;
+            document.getElementById("resultado").innerHTML = 
+                "O valor total é R$ " + valorTotal.toFixed(2) + 
+                "<br>O valor da Gorjeta é R$ " + gorjeta.toFixed(2);
+        }
+    </script>
+</head>
+<body>
+    <main id="container">
+        <div id="quadro">
+            <h2>Cálculo de Gorjeta</h2>
+
+            <div id="input_box">
+                <div class="input-field">
+                    <label for="total">Valor total do pedido: </label>
+                    <input type="number" id="total" step="0.01">
+                </div>
+
+                <div class="input-field">
+                    <label for="lang">Nível de Satisfação</label>
+                    <select name="niveis" id="lang">
+                        <option value="bom">Bom</option>
+                        <option value="otimo">Ótimo</option>
+                        <option value="excelente">Excelente</option>
+                    </select>
+                    <input id="verif" type="button" value="Calcular" onclick="verifGorjeta()">
+                </div>
+            </div>
+
+            <div id="resultado"></div>
+        </div>
+    </main>
+</body>
+</html>

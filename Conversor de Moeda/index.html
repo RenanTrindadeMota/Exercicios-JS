@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="moeda-style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <main id="container">
+        <div id="quadro">
+            <h2>
+               Conversor de Moeda
+            </h2>
+
+            <div id="input_box">
+                <div class="input-field">
+                    <label for="value">Insira o valor(em Reais): </label>
+                    <input type="number" id="real" placeholder="Insira um valor">
+                </div>
+
+                <div class="input-field">
+                    <label for="lang">Moedas</label>
+                    <select name="moedas" id="lang">
+                        <option value="dolar">Dólar(USD)</option>
+                        <option value="euro">Euro(EUR)</option>
+                        <option value="libra">Libra Esterlina(GBP)</option>
+                    </select>
+                    <input id="conv" type="button" value="Calcular" onclick="convMoeda()">
+                </div>
+            </div>
+
+            <div id="resultado"></div>
+        </div>
+        <script src="moeda-script.js"></script>
+</body>
+</html>

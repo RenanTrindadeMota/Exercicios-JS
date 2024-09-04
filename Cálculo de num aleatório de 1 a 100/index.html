@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerar Números Aleatórios</title>
+</head>
+<body>
+    <button id="ativar">Gerar Números</button>
+    <div id="numeros"></div>
+    <div id="resultado"></div>
+
+    <script>
+        // Função para gerar números aleatórios entre min e max (inclusive)
+        function gerarNumeroAleatorio(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min; // (max - min + 1) corrige a contagem e +min corrige a ordem
+        }
+
+        document.getElementById('ativar').addEventListener('click', function() { //essa function engloba todo restante da função para acionar o click
+            // Inicialize a soma dos números
+            let soma = 0; //começa com 0 para ser abastecido porsteriormente
+            const quantidade = 10; // Número de elementos
+            let numerosGerados = ''; 
+
+            // Gere 10 números aleatórios entre 1 e 100
+            for (let i = 0; i < quantidade; i++) {
+                let numero = gerarNumeroAleatorio(1, 100);
+                numerosGerados += `Número ${i + 1}: ${numero}<br>`;
+                soma += numero; // o sinal "+=" faz a variável da esquerda ser somada com a direita e assim a variável a esquerda séra igual a soma
+            }
+
+            // Calcule a média
+            let media = soma / quantidade;
+
+            // Atualize o conteúdo do DOM
+            document.getElementById('numeros').innerHTML = numerosGerados;
+            document.getElementById('resultado').innerHTML = `A média dos números gerados é: ${media.toFixed(2)}`;
+        });
+    </script>
+</body>
+</html>

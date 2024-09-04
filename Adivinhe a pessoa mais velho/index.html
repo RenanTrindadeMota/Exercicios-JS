@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style-velho.css">
+    <title>Pessoa Mais Velha</title>
+</head>
+<body>
+    <div id="container">
+        <div id="quadro">
+            <h1>
+                Encontre a Pessoa Mais Velha
+            </h1>
+            
+            <div id="input-box">
+                <div class="input-field">
+                    <label for="names">Nomes (separados por vírgulas):</label>
+                    <input type="text" id="names" placeholder="Nome1, Nome2, Nome3, Nome4, Nome5" />
+                </div>
+                
+                <div class="input-field">
+                    <label for="ages">Idades (separadas por vírgulas):</label>
+                    <input type="text" id="ages" placeholder="Idade1, Idade2, Idade3, Idade4, Idade5" />
+                </div>
+            </div>
+
+            <button id="verif" onclick="findOldest()">Encontrar Pessoa Mais Velha</button>
+            
+            <h2 id="result"></h2>
+        </div>
+    </div>
+    <script src="script-velho.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function recomendacao() {
+
+            var graus = parseInt(document.getElementById("graus").value);
+            var recomendacao;
+
+            switch (true) {
+                case (graus<15):
+                    recomendacao = "Casaco e Luvas";
+                    break;
+                case (graus>=15 && graus<=25):
+                    recomendacao = "Jaqueta e Cachecol";
+                    break;
+                case (graus>25):
+                    recomendacao = "Camiseta e chapéu";
+                    break;
+                default:
+                    recomendacao = "Insira um valor válido"
+            }
+
+            document.getElementById("resultado").innerHTML = recomendacao;
+        }
+    </script>
+</head>
+<body>
+    <main id="container">
+        <div id="quadro">
+            <h2>
+               Recomendação de Roupa
+            </h2>
+
+            <div id="input_box">
+                <div class="input-field">
+                    <label for="value">Insira a temperatura ambiente(em graus Celsius, apenas número): </label>
+                    <input type="number" id="graus">
+                </div>
+            </div>
+
+            <button onclick="recomendacao()">
+                Verificar
+            </button>
+
+            <div id="resultado"></div>
+        </div>
+
+</body>
+</html>

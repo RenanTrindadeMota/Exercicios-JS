@@ -1,0 +1,84 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(../img/dr06_5ev7_230323.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#quadro {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px;
+    border-radius: 6px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: rgb(23, 45, 117);
+}
+
+#quadro h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    align-self: center;
+}
+
+#input-box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.input-field label {
+    font-size: 20px;
+}
+
+.input-field input {
+    border: none;
+    border-radius: 4px;
+    font-size: 20px;
+    padding: 4px;
+}
+
+.input-field input:focus {
+    outline: none;
+    /* border: 2px solid #003477; */
+    box-shadow: 0 0 15px #005fdb ;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+
+#verif {
+    border: none;
+    border-radius: 4px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: white;
+}

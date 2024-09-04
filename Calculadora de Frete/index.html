@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Frete</title>
+
+    <script>
+        function calcFrete() {
+            var peso = parseFloat(document.getElementById("pesop").value);
+            var regiao = document.querySelector("#lang").value;
+            var frete;
+
+            switch (true) {
+                case (regiao==="n" && peso<=5):
+                    frete=15;
+                    break;
+                case (regiao==="n" && peso>5):
+                    frete=25;
+                    break;
+                case (regiao==="s" && peso<=5):
+                    frete=10;
+                    break;
+                case (regiao==="s" && peso>5):
+                    frete=20;
+                    break;
+                case (regiao==="co" && peso<=5):
+                    frete=12;
+                    break;
+                case (regiao==="co" && peso>5):
+                    frete=22;
+                    break;
+            }
+
+            document.getElementById("resultado").innerHTML = "O valor do frete é R$ "+frete+",00"
+        }
+    </script>
+</head>
+<body>
+    <main id="container">
+        <div id="quadro">
+            <h2>Cálculo de Frete</h2>
+
+            <div id="input_box">
+                <div class="input-field">
+                    <label for="total">Peso do produto(em kg): </label>
+                    <input type="number" id="pesop" step="0.01">
+                </div>
+
+                <div class="input-field">
+                    <label for="lang">Região de Entrega</label>
+                    <select name="regioes" id="lang">
+                        <option value="n">Norte</option>
+                        <option value="s">Sul</option>
+                        <option value="co">Centro-Oeste</option>
+                    </select>
+                    <input type="button" value="Calcular" onclick="calcFrete()">
+                </div>
+            </div>
+
+            <div id="resultado"></div>
+        </div>
+    </main>
+</body>
+</html>

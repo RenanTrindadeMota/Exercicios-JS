@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="saudacao-style.css">
+    <title>Document</title>
+
+    <script>
+        function saudacao() {
+            var data = new Date().getHours();
+            var saudar;
+
+            if (data>=5 && data<=12) {
+                saudar="Bom Dia!"
+            } else if (data>12 && data<=18) {
+                saudar="Boa Tarde!"
+            } else {
+                saudar="Boa Noite!"
+            }
+            document.getElementById("resultado").innerHTML = saudar
+        }
+        
+    </script>
+</head>
+<body>
+    <main id="container">
+        <div id="quadro">
+            <h2>
+               Saudação do Dia
+            </h2>
+
+            <button id="verif" onclick="saudacao()">
+                Verificar
+            </button>
+
+            <div id="resultado"></div>
+        </div>
+    </main>
+</body>
+</html>
