@@ -21,6 +21,7 @@ body {
 
 #container {
     max-width: 1200px;
+    height: 100vh;
     margin: 0 auto;
     padding: 20px;
     display: flex;
@@ -30,6 +31,8 @@ body {
 }
 
 #container h2 {
+    display: flex;
+    align-self: center;
     font-family:'titulo';
     color: white;
     font-size: 5em;
@@ -80,7 +83,11 @@ button:hover {
 }
 
 /* Responsividade para telas menores */
-@media (max-width: 511px) {
+@media (max-width: 584px) {
+    #container {
+        height: auto;
+    }
+
     .colunas {
         flex-direction: column;
         align-items: center; /* Centraliza as colunas */
@@ -97,7 +104,12 @@ button:hover {
     }
 }
 
-@media (min-width:512px) and (max-width:1023px) {
+@media (min-width:585px) and (max-width:1023px) {
+
+    h2 {
+        font-size: 2vw;
+        white-space: nowrap;
+    }
 
     .colunas {
         display: flex;
