@@ -6,6 +6,13 @@
 
 body {
     font-family: Arial, sans-serif;
+    background-image: url(../img/fundo-forca.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
 .hidden {
@@ -28,7 +35,7 @@ body {
     border-radius: 6px;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
-    background-color: rgb(74, 0, 172);
+    background-color: rgb(61, 10, 128);
 }
 
 #quadro h2 {
@@ -57,13 +64,14 @@ body {
     flex-direction: column;
 }
 
-#game-section {
-    gap: 15px;
+#game-section p{
+    padding-bottom: 10px;
 }
+
 #word-display {
-    display: flex;
-    align-self: center;
+    text-align: center;
 }
+
 
 #game-section input {
     border: none;
